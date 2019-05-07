@@ -18,6 +18,7 @@
 int time;
 int hours;
 int moveHourHand;
+int cyclesReturned;
 
 int main(void)
 {
@@ -35,8 +36,10 @@ int main(void)
     while ( hours <= 0);
 
     moveHourHand = hours % 12;
-    printf("move hour hand is %i\n", moveHourHand);
+    cyclesReturned = hours / 12;
+    printf("move hour hand %i times\n", moveHourHand);
+    printf("Number of Clock Cycles is %i\n", cyclesReturned);
     time += moveHourHand;
 
-    printf("time is %i\n", time);
+    printf("time is %i o'clock\n", time);
 }
