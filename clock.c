@@ -27,13 +27,15 @@ int main(void)
     {
        time = get_int("time 1-12: ");
     }
-    while (time <= 0);
+    while (time <= 0 || time > 12);
+    // (time <= 12 && time> 0)
 
     hours = get_int("hours: ");
 
     moveHourHand = hours % 12;
     cyclesReturned = hours / 12;
     time += moveHourHand;
+
     if (time == 0)
     {
         time = 12;
@@ -42,5 +44,4 @@ int main(void)
     printf("Move hour hand %i times\n", moveHourHand);
     printf("Number of Clock Cycles is %i\n", cyclesReturned);
     printf("Time is %i o'clock\n", time);
-    return 0;
 }
